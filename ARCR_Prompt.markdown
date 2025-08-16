@@ -39,7 +39,7 @@ Markdown table (JSON-parsable, use Grok 3). Columns: Item (e.g., “Healing Poti
   Log updates in Recap (e.g., “Updated Quests: Progress noted”).  
   On 'session over', after updates, use code_execution to run this snippet with changed_files populated from automatic updates, and output the data URLs in the response.
 
-**Prompt for Player**: Provide action (e.g., “Study fey runes”) and NSFW preference. If no action, resume prior (e.g., lake investigation). Save as Session_[Day]_[AR Date].markdown, linking Cutscene, Mechanics, Recap. Update Master_Index.markdown.
+**Prompt for Player**: Provide action (e.g., “Study fey runes”) and NSFW preference. If no action, resume prior (e.g., lake investigation). Updates will be automatically applied to Journal.md, Master_Index.markdown, and related files.
 
 **Data Extraction Guidelines**:
 - **Tables (Recap, Party Status, Gained/Lost Items)**: Copy the table text from the response. Use code_execution with this snippet for JSON parsing:
@@ -74,5 +74,6 @@ def encode_files_to_data_urls(file_contents_dict):
 # Usage: Pass a dict of {'filename.md': 'content string', ...} for changed files
 changed_files = {}  # Grok populates this with updated file contents
 print(encode_files_to_data_urls(changed_files))
+
 
 
