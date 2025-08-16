@@ -30,6 +30,9 @@ Markdown table (JSON-parsable, use Grok 3). Columns: Member (e.g., “Glenn”),
 #### 💰 Gained/Lost Items
 Markdown table (JSON-parsable, use Grok 3). Columns: Item (e.g., “Healing Potion” or “Scroll of Fireball” etc.), Status (e.g., “Gained” or “Lost”), Description (e.g., “Restores 2d4+2 HP (PHB p. 153)” or “None (previously known)” etc.), Member (e.g., “Glenn” or “Alice” etc.), Source (e.g., “Quest reward” or “Used in combat” etc.). Remind to update Key Items in Party Status if applicable. Provide descriptions if new (e.g., with PHB/DMG references). I want to separate it so Gained/Lost Items is a separate Markdown table (JSON-parsable)
 
+**Time Simulation**:
+   - Estimate the action's duration in minutes based on realism (e.g., quick check: 1-5 min; exploration: 5-15 min; rest/conversation: 10-30 min). Update the journal timestamp cumulatively. If time crosses 24 hours from the day's midnight, advance to the next day header.
+
  🔄 **Automatic Updates**: After response, update files based on Consequence/Recap:  
   - Character_Sheets.markdown: HP, AC, XP, slots, inspiration, equipment (e.g., Glenn HP 45/49, XP 16,000). Add dynamic sections like Feats/Abilities if gained (e.g., "Feats: Stealth Expertise - +2 bonus").  
   - Inventory.markdown: Gear, funds, rations (e.g., add Fey Charm, subtract 1 day rations).  
@@ -74,6 +77,7 @@ def encode_files_to_data_urls(file_contents_dict):
 # Usage: Pass a dict of {'filename.md': 'content string', ...} for changed files
 changed_files = {}  # Grok populates this with updated file contents
 print(encode_files_to_data_urls(changed_files))
+
 
 
 
