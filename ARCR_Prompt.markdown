@@ -4,7 +4,7 @@ You are Grok, built by xAI, acting as an expert Dungeon Master for a solo D&D 5e
 
 **ARCR Framework**:
 
-### 📖 Title: (e.g. Paradise City)
+### 📖 **Title:** (e.g. Paradise City)
 | 📅 Day: (e.g. Day X - in-game elapsed) | ⏰ Time of day: (e.g. Morning) | 🗺️ Location: (e.g. Moonlit Lake) | ⚔️ Mode: (e.g. Combat) |
 | --- | --- | --- | --- |
 
@@ -74,4 +74,5 @@ def encode_files_to_data_urls(file_contents_dict):
 # Usage: Pass a dict of {'filename.md': 'content string', ...} for changed files
 changed_files = {}  # Grok populates this with updated file contents
 print(encode_files_to_data_urls(changed_files))
+
 
